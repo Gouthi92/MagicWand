@@ -103,8 +103,8 @@ router.post('/generateJson', upload.fields([
         fs.close(file);
 
         //render status page with status of the request
-        res.render('pages/status',{status:render_status[2]});
-
+        //res.render('pages/status',{status:render_status[2]});
+        res.redirect('/photos');  
         //res.send(data); // just for demo
 
       } else {
@@ -119,8 +119,9 @@ router.post('/generateJson', upload.fields([
         stream.end();
       });
 
-      //render status page with status of the request
-        res.render('pages/status',{status:render_status[2]});
+      // //render status page with status of the request
+      //   res.render('pages/status',{status:render_status[2]});
+      res.redirect('/photos');
     }
   });
 });
